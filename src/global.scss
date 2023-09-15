@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 :root {
@@ -23,7 +26,7 @@ body {
 
 body, a {
     color: var(--white);
-    font: 500 1rem "Poppins", sans-serif;
+    font: 500 1rem "Montserrat", sans-serif;
 }
 
 a{
@@ -52,8 +55,53 @@ main{
         }
 
         .cloud{
-            display: none;
             position: absolute;
+            z-index: -2;
+            width: auto;
+            height: 11vh;
+            left: -258px;
+            animation: moverCloud 10s linear infinite;
+
+            @keyframes moverCloud{
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(calc(100vw + 258px));
+                }
+            }
+
+            &:nth-child(1){
+                top: 80px;
+                /*left:-258px;*/
+                animation-delay: 4s;
+                
+            }
+            &:nth-child(2){
+                top: 190px;
+                /*left: 450px; altura anterior, para posicionar as nuvens*/
+                animation-delay: 8s;
+            }
+            &:nth-child(3){
+                top: 420px;
+                /*left: 800px;*/
+                
+            }
+            &:nth-child(4){
+                top: 310px;
+                /*left: 650px;*/
+                animation-delay: 6s;
+            }
+            &:nth-child(5){
+                top: 480px;
+                /*left: 450px;*/
+                animation-delay: 4s;
+            }
+            &:nth-child(6){
+                top: 390px;
+                /*left: 30px;*/
+                animation-delay: 2s;
+            }
         }
 
         .barbie{
@@ -72,6 +120,11 @@ main{
 
        a{
         font-size: 20px;
+        
+        &:hover{
+            color: var(--pink);
+            transition: all 0.4s;
+        }
        }
 
        a img{
@@ -84,6 +137,7 @@ main{
         display: flex;
         flex: 1;
         padding: 0 100px;
+        align-items: flex-start;
 
         .trailer{
             display: flex;
@@ -91,6 +145,19 @@ main{
             row-gap: 2px;
             margin-top: 100px;
             margin-right: auto;
+            cursor: pointer;
+            position: relative;
+
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 6px;
+                background: var(--black);
+                width: 300px;
+                height: 200px;
+                filter: blur(10px);
+            }
 
             strong{
                 font-size: 18px;
@@ -106,11 +173,57 @@ main{
                     width: 300px;
                     height: 200px;
                     transition: all 0.4s;
+                    position: relative;
 
                     &:hover{
                         transform: scale(1.1);
                     }
                 }
+            }
+
+        }
+
+        .margot{
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            width: 250px;
+            height: auto;
+            padding: 8px 0;
+            border-radius: 45px;
+            background: transparent;
+            border: 1px solid var(--silver);
+            box-shadow: var(--shadow-name);
+            margin-top: 25vh;
+            margin-right: 25vh;
+            transition: all 0.4s;
+
+            &:hover{
+                background: var(--pink);
+                transform: translateY(-10px);
+                cursor: pointer;
+            }
+        }
+
+        .ryan{
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            width: 250px;
+            height: auto;
+            padding: 8px 0;
+            border-radius: 45px;
+            background: transparent;
+            border: 1px solid var(--silver);
+            box-shadow: var(--shadow-name);
+            margin-top: 10vh;
+            margin-right: 23vh;
+            transition: all 0.4s;
+
+            &:hover{
+                background: var(--pink);
+                transform: translateY(-10px);
+                cursor: pointer;
             }
         }
     }
@@ -126,6 +239,11 @@ main{
 
         a{
             font-size: 18px;
+
+            &:hover{
+                color: var(--pink);
+                transition: all 0.4s;
+            }
         }
     }
 }
